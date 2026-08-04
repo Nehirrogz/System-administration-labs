@@ -46,7 +46,7 @@ nehir@ubuntu:~$ ip addr
     link/ether 00:0c:29:7b:9a:80 brd ff:ff:ff:ff:ff:ff
     inet 10.10.7.70/24 brd 10.10.7.255 scope global enp2s0
 ```
-
+```markdown
 ### 1. Rocky Sunucu
 * **Ağ:** VMnet4
 * **IP Adresi:** `10.10.20.90/24`
@@ -60,7 +60,7 @@ nehir@ubuntu:~$ ip addr
 2: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP
     link/ether 00:0c:29:7a:c2:af brd ff:ff:ff:ff:ff:ff
     inet 10.10.20.90/24 brd 10.10.20.255 scope global noprefixroute enp2s0
-
+```
 ---
 
 #  Router Yapılandırması ve Testler
