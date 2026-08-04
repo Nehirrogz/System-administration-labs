@@ -18,6 +18,7 @@ nehir@debian:~$ systemctl status bind9
      Active: active (running) since Thu 2026-07-16 13:35:16 +03; 1min 10s ago
    Main PID: 7770 (named)
      Status: "running"
+
 ```markdown
 acl "trusted" {
     127.0.0.0/8;
