@@ -22,7 +22,7 @@ Ubuntu VM ve Rocky VM farklı subnet'lerde yer almakta olup, aralarındaki tek g
 * **IP Adresi:** `10.10.7.70/24`
 * **Gateway:** `10.10.7.1`
 * **Arayüz:** `enp2s0`
-
+```
 
 #### Netplan Yapılandırması (`/etc/netplan/50-cloud-init.yaml`)
 ```yaml
@@ -45,7 +45,7 @@ nehir@ubuntu:~$ ip addr
 2: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP
     link/ether 00:0c:29:7b:9a:80 brd ff:ff:ff:ff:ff:ff
     inet 10.10.7.70/24 brd 10.10.7.255 scope global enp2s0
-
+```
 
 ### 1. Rocky Sunucu
 * **Ağ:** VMnet4
