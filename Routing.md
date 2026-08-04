@@ -16,7 +16,7 @@ Ubuntu VM ve Rocky VM farklı subnet'lerde yer almakta olup, aralarındaki tek g
 ```markdown
 ## İstemci Sunucuların Yapılandırılması
 
-### 1. Ubuntu Sunucu
+## 1. Ubuntu Sunucu
 * **Ağ:** VMnet3
 * **IP Adresi:** `10.10.7.70/24`
 * **Gateway:** `10.10.7.1`
