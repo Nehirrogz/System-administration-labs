@@ -11,7 +11,8 @@ Ubuntu VM ve Rocky VM farklı subnet'lerde yer almakta olup, aralarındaki tek g
 
 ```text
 [ Ubuntu VM ]  <--->  (10.10.7.0/24)  <--->  [ Debian Router ]  <--->  (10.10.20.0/24)  <--->  [ Rocky VM ]
-10.10.7.70                                     10.10.7.1 | 10.10.20.1                                10.10.20.90
+10.10.7.70                                    10.10.7.1 | 10.10.20.1                                10.10.20.90 
+```
 
 ```markdown
 ## İstemci Sunucuların Yapılandırılması
