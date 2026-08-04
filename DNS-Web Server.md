@@ -1,6 +1,6 @@
 ## 2. BÖLÜM: Nginx Web Server Kurulumu ve DNS Entegrasyonu
 
-Debian sunucusuna Nginx kurulmuş ve DNS zone dosyası üzerinden `[www.profelistest.com](https://www.profelistest.com)` adresi Nginx sunucusunun IP adresine yönlendirilmiştir[cite: 2, 4].
+Debian sunucusuna Nginx kurulmuş ve DNS zone dosyası üzerinden `[www.profelistest.com](https://www.profelistest.com)` adresi Nginx sunucusunun IP adresine yönlendirilmiştir.
 
 ### Nginx Kurulumu
 ```bash
@@ -8,7 +8,7 @@ nehir@debian:~$ sudo apt install nginx -y
 ```
 
 ### DNS Seçeneklerinin Güncellenmesi (`/etc/bind/named.conf.options`)
-DNS sunucusunun yeni ağ segmentlerinden ve IP adreslerinden gelen isteklere yanıt verebilmesi için config güncellendi[cite: 2, 4]:
+DNS sunucusunun yeni ağ segmentlerinden ve IP adreslerinden gelen isteklere yanıt verebilmesi için config güncellendi:
 
 ```bind
 acl "trusted" {
@@ -27,7 +27,7 @@ options {
 ```
 
 ### SOA Serial Artırımı ve `www` A Kaydı Ekleme (`/etc/bind/db.profelistest.com`)
-Her zone güncellemesinde ikincil DNS'lerin yeni bilgiyi çekebilmesi için SOA Serial numarası **1 artırıldı (3 -> 4)**[cite: 2, 4]:
+Her zone güncellemesinde ikincil DNS'lerin yeni bilgiyi çekebilmesi için SOA Serial numarası **1 artırıldı (3 -> 4)**
 
 ```bind
 ; Serial numarası 3 -> 4 olarak güncellendi
@@ -42,7 +42,7 @@ www     IN      A       192.168.111.81
 ```
 
 ### DNS ve Web Sunucu Testleri (Ubuntu & Rocky)
-İstemci makineler üzerinden `curl` ve `lynx` komutlarıyla `[www.profelistest.com](https://www.profelistest.com)` adresine erişilmiş, DNS çözümlemesi ile Nginx karşılama sayfası doğrulanmıştır[cite: 2, 4].
+İstemci makineler üzerinden `curl` ve `lynx` komutlarıyla `[www.profelistest.com](https://www.profelistest.com)` adresine erişilmiş, DNS çözümlemesi ile Nginx karşılama sayfası doğrulanmıştır.
 
 ```bash
 [nehir@rocky ~]$ curl http://www.profelistest.com
@@ -59,10 +59,10 @@ www     IN      A       192.168.111.81
 
 ## Özel VirtualHost Yapılandırması (`nehir.profelistest.com`)
 
-Aynı web sunucusu üzerinde ikinci bir alan adı ve özel bir web dizini tanımlanmıştır[cite: 2, 4].
+Aynı web sunucusu üzerinde ikinci bir alan adı ve özel bir web dizini tanımlanmıştır.
 
 ### DNS SOA Artırımı ve `nehir` A Kaydı (`/etc/bind/db.profelistest.com`)
-SOA Serial numarası **4 -> 5** olarak yükseltilmiş ve yeni A kaydı eklenmiştir[cite: 2, 4]:
+SOA Serial numarası **4 -> 5** olarak yükseltilmiş ve yeni A kaydı eklenmiştir:
 
 ```bind
 @       IN      SOA     ns1.profelistest.com. admin.profelistest.com. (
@@ -103,7 +103,7 @@ server {
 ```
 
 ### Symlink Oluşturma ve Yayına Alma
-Hazırlanan VirtualHost dosyasının Nginx tarafından okunabilmesi için `sites-enabled` dizinine symlink atanmıştır[cite: 2, 4]:
+Hazırlanan VirtualHost dosyasının Nginx tarafından okunabilmesi için `sites-enabled` dizinine symlink atanmıştır:
 
 ```bash
 nehir@debian:~$ sudo ln -s /etc/nginx/sites-available/nehir.profelistest.com /etc/nginx/sites-enabled/
